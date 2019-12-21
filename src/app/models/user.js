@@ -7,8 +7,6 @@ class User extends Model {
         name: Sequelize.STRING,
         email: Sequelize.STRING,
         password_hash: Sequelize.STRING,
-        created_at: Sequelize.DATE,
-        updated_at: Sequelize.DATE,
       },
       {
         sequelize,
