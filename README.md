@@ -2,16 +2,10 @@
 
 # GymPoint-api-backEnd
 
-1. Nesta parte inicial foi iniciado o projeto com 
+1. Aqui fizemos o model User.
 
-```
-"yarn init -y" e "yarn add express".
-```
+2. Fazemos a conexão dos Models com o BD.
 
-2. após isso foi adicionado o .gitignore e colocado as dependências do express.
+3. Importamos o BD no App.js para funcionar a conexão.
 
-3. Depois disso foi feita a configuração do servidor, foi feito a importação do express. Foi instanciado. Colocado middlewares (com allow no JSON) e também feito a referência para as rotas.
-
-4. No arquivo de rotas foi feito a importação do Router para o projeto, só então foi instanciado o "router" para criação de rotas e, após a criação de um 'hello word' por return de um http get request ('/'), foi feito o export do módulo de rotas.
-
-**Lembrando que como não houve ainda a habilitação do SUCRASE, então fica aqui apenas o const com require; e sem o export default que facilita bastante.**
+4. Adicionamos na rota um controller para testar a conexão.
