@@ -1,8 +1,6 @@
-![GymPoint](https://github.com/Rocketseat/bootcamp-gostack-desafio-02/raw/master/.github/logo.png)
+: ![GymPoint](https://github.com/Rocketseat/bootcamp-gostack-desafio-02/raw/master/.github/logo.png) :
 
 # GymPoint-api-backEnd
-
-======
 
 *1. Nesta parte inicial foi iniciado o projeto com 
 
