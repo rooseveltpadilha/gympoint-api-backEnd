@@ -31,7 +31,7 @@ yarn add sucrase nodemon -D
 
 5. adicionamos os imports e colocamos os export default's.
 
-**e agora posso executar o projeto com: 
+**e agora posso executar o projeto com:**
 
 ```
 yarn dev
