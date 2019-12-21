@@ -1,4 +1,4 @@
-!(https://github.com/Rocketseat/bootcamp-gostack-desafio-02/raw/master/.github/logo.png)
+![GymPoint](https://github.com/Rocketseat/bootcamp-gostack-desafio-02/raw/master/.github/logo.png)
 
 # GymPoint-api-backEnd
 
@@ -14,4 +14,4 @@
 
 *4. No arquivo de rotas foi feito a importação do Router para o projeto, só então foi instanciado o "router" para criação de rotas e, após a criação de um 'hello word' por return de um http get request ('/'), foi feito o export do módulo de rotas.
 
-### Lembrando que como não houve ainda a habilitação do SUCRASE, então fica aqui apenas o const com require; e sem o export default que facilita bastante.
+**Lembrando que como não houve ainda a habilitação do SUCRASE, então fica aqui apenas o const com require; e sem o export default que facilita bastante.**
