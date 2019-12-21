@@ -1,5 +1,5 @@
+import * as Yup from 'yup';
 import Student from '../models/Student';
-import User from '../models/User';
 
 class StudentsController {
   // eslint-disable-next-line class-methods-use-this
@@ -11,6 +11,20 @@ class StudentsController {
   // eslint-disable-next-line class-methods-use-this
   async store(req, res) {
     const { name, email, idade, peso, altura } = req.body;
+
+    const schema = Yup.object().shape({
+      name: Yup.string().required(),
+      email: Yup.string(),
+      idade: Yup.number()
+        .integer()
+        .required(),
+      peso: Yup.number(),
+      altura: Yup.number(),
+    });
+
+    if (!(await schema.isValid(req.body))) {
+      return res.status(401).json({ error: 'Validation fails' });
+    }
 
     const idadeParse = Number(idade);
     const pesoParse = parseFloat(peso);
@@ -29,8 +43,19 @@ class StudentsController {
   // eslint-disable-next-line class-methods-use-this
   async update(req, res) {
     const studentId = req.params.id;
-
     const { name, email, idade, peso, altura } = req.body;
+
+    const schema = Yup.object().shape({
+      name: Yup.string(),
+      email: Yup.string(),
+      idade: Yup.number().integer(),
+      peso: Yup.number(),
+      altura: Yup.number(),
+    });
+
+    if (!(await schema.isValid(req.body))) {
+      res.status(401).json({ error: 'Validation fails' });
+    }
 
     await Student.update(
       { name, email, idade, peso, altura },
