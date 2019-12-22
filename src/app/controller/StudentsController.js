@@ -42,7 +42,7 @@ class StudentsController {
 
   // eslint-disable-next-line class-methods-use-this
   async update(req, res) {
-    const studentId = req.params.id;
+    const upId = req.params.id;
     const { name, email, idade, peso, altura } = req.body;
 
     const schema = Yup.object().shape({
@@ -59,19 +59,19 @@ class StudentsController {
 
     await Student.update(
       { name, email, idade, peso, altura },
-      { where: { id: studentId } }
+      { where: { id: upId } }
     );
 
-    const updated = await Student.findOne({ where: { id: studentId } });
+    const updated = await Student.findOne({ where: { id: upId } });
 
     return res.json(updated);
   }
 
   // eslint-disable-next-line class-methods-use-this
   async delete(req, res) {
-    const idStudent = req.params.id;
+    const studentId = req.params.id;
 
-    await Student.destroy({ where: { id: idStudent } });
+    await Student.destroy({ where: { id: studentId } });
 
     return res.json({ message: 'Estudante deletado' });
   }

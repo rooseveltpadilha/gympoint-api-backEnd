@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import SessionController from './app/controller/SessionController';
 import StudentsController from './app/controller/StudentsController';
+import PlanController from './app/controller/PlanController';
 // eslint-disable-next-line import/no-named-as-default
 import authMiddleware from './app/middlewares/auth';
 
@@ -12,5 +13,10 @@ routes.get('/students', authMiddleware, StudentsController.index);
 routes.post('/students', authMiddleware, StudentsController.store);
 routes.put('/students/:id', authMiddleware, StudentsController.update);
 routes.delete('/students/:id', authMiddleware, StudentsController.delete);
+
+routes.get('/plans', authMiddleware, PlanController.index);
+routes.post('/plans', authMiddleware, PlanController.store);
+routes.put('/plans/:id', authMiddleware, PlanController.update);
+routes.delete('/plans/:id', authMiddleware, PlanController.delete);
 
 export default routes;
