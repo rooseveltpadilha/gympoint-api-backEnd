@@ -1,11 +1,13 @@
 import Sequelize, { Model } from 'sequelize';
 
-class Plan extends Model {
+class Enroll extends Model {
   static init(sequelize) {
     super.init(
       {
-        title: Sequelize.STRING,
-        duration: Sequelize.INTEGER,
+        student_id: Sequelize.INTEGER,
+        plan_id: Sequelize.INTEGER,
+        start_date: Sequelize.DATE,
+        end_date: Sequelize.DATE,
         price: Sequelize.FLOAT,
       },
       {
@@ -16,4 +18,4 @@ class Plan extends Model {
   }
 }
 
-export default Plan;
+export default Enroll;
