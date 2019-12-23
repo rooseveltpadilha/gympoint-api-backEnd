@@ -6,7 +6,6 @@ import EnrollController from './app/controller/EnrollController';
 // eslint-disable-next-line import/no-named-as-default
 import authMiddleware from './app/middlewares/auth';
 
-
 const routes = new Router();
 
 routes.post('/login', SessionController.store);

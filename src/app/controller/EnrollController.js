@@ -3,6 +3,8 @@ import { addMonths } from 'date-fns';
 import Enroll from '../models/Enroll';
 import Plan from '../models/Plan';
 import Student from '../models/Student';
+import WelcomeMail from '../jobs/WelcomeMail';
+import Queue from '../../lib/Queue';
 
 class EnrollController {
   // eslint-disable-next-line class-methods-use-this
@@ -51,10 +53,12 @@ class EnrollController {
     const date = new Date();
 
     const end_date_final = addMonths(date, planStudent.duration);
+
     const price_final = planStudent.duration * planStudent.price;
 
+    await Queue.add(WelcomeMail.key, { planStudent, student });
 
-    const enroll = await Enroll.create({
+    const enrolled = await Enroll.create({
       student_id,
       plan_id,
       start_date: date,
@@ -62,7 +66,7 @@ class EnrollController {
       price: price_final,
     });
 
-    return res.json(enroll);
+    return res.json(enrolled);
   }
 
   // eslint-disable-next-line class-methods-use-this

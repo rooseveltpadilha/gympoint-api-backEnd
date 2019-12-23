@@ -5,7 +5,6 @@ import Plan from '../app/models/Plan';
 import Enroll from '../app/models/Enroll';
 import databaseConfig from '../config/database';
 
-
 const models = [User, Student, Plan, Enroll];
 
 class Database {
