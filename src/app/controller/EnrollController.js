@@ -9,8 +9,20 @@ import Queue from '../../lib/Queue';
 class EnrollController {
   // eslint-disable-next-line class-methods-use-this
   async index(req, res) {
-    const enrolls = await Enroll.findAll();
-    return res.json(enrolls);
+    const enrollment = await Enroll.findAll({
+      include: [
+        {
+          model: Student,
+          as: 'student',
+        },
+        {
+          model: Plan,
+          as: 'plan',
+        }
+      ]
+    });
+
+    return res.json(enrollment);
   }
 
   // eslint-disable-next-line class-methods-use-this

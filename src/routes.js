@@ -3,6 +3,7 @@ import SessionController from './app/controller/SessionController';
 import StudentsController from './app/controller/StudentsController';
 import PlanController from './app/controller/PlanController';
 import EnrollController from './app/controller/EnrollController';
+import CheckinsController from './app/controller/CheckinsController';
 // eslint-disable-next-line import/no-named-as-default
 import authMiddleware from './app/middlewares/auth';
 
@@ -24,5 +25,8 @@ routes.get('/enroll', authMiddleware, EnrollController.index);
 routes.post('/enroll', authMiddleware, EnrollController.store);
 routes.put('/enroll/:id_stud', authMiddleware, EnrollController.update);
 routes.delete('/enroll/:id_stud', authMiddleware, EnrollController.delete);
+
+routes.get('/students/:id/checkins', CheckinsController.index);
+routes.post('/students/:id/checkins', CheckinsController.store);
 
 export default routes;
