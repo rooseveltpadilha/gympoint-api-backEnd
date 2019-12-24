@@ -6,6 +6,7 @@ import EnrollController from './app/controller/EnrollController';
 import CheckinsController from './app/controller/CheckinsController';
 // eslint-disable-next-line import/no-named-as-default
 import authMiddleware from './app/middlewares/auth';
+import HelpOrdersController from './app/controller/HelpOrdersController';
 
 const routes = new Router();
 
@@ -28,5 +29,8 @@ routes.delete('/enroll/:id_stud', authMiddleware, EnrollController.delete);
 
 routes.get('/students/:id/checkins', CheckinsController.index);
 routes.post('/students/:id/checkins', CheckinsController.store);
+
+routes.get('/students/:id/help-orders', HelpOrdersController.index);
+routes.post('/students/:id/help-orders', HelpOrdersController.store);
 
 export default routes;
